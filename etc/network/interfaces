@@ -1,0 +1,38 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto enp0s3
+iface enp0s3 inet static
+	address 192.168.41.10
+	netmask 255.255.255.0
+		up iptables -t nat -A POSTROUTING -o enp0s10 -s 192.168.41.0/24 -j MASQUERADE
+		down iptables -t nat -D POSTROUTING -o enp0s10 -s 192.168.41.0/24 -j MASQUERADE
+
+auto enp0s8
+iface enp0s8 inet static
+	address 192.168.42.10
+	netmask 255.255.255.0
+		up iptables -t nat -A POSTROUTING -o enp0s10 -s 192.168.42.0/24 -j MASQUERADE
+		down iptables -t nat -D POSTROUTING -o enp0s10 -s 192.168.42.0/24 -j MASQUERADE
+
+
+auto enp0s9
+iface enp0s9 inet static
+	address 192.168.43.10
+	netmask 255.255.255.0
+		up iptables -t nat -A POSTROUTING -o enp0s10 -s 192.168.43.0/24 -j MASQUERADE
+		down iptables -t nat -D POSTROUTING -o enp0s10 -s 192.168.43.0/24 -j MASQUERADE
+
+auto enp0s10
+iface enp0s10 inet dhcp
+	address 192.168.41.11
+	netmask 255.255.255.0
+
+
