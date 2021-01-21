@@ -1,0 +1,15 @@
+$TTL	604800
+@	IN	SOA	PC11 admin (
+                        3 ; Serial
+                        604800 ; Refresh
+                        86400 ; Retry
+                        2419200 ; Expire
+                        604800 ) ; Negative Cache TTL
+; Servidores de nombre
+@	IN	NS	PC11.ejemplo.com.
+	IN	NS	PC12.ejemplo.com.
+
+14	IN	PTR	PC14.ejemplo.com.
+15	IN	PTR	PC15.ejemplo.com.
+16	IN	PTR	PC16.ejemplo.com.
+10	IN	PTR	PC10.ejemplo.com.
