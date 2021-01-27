@@ -5,8 +5,7 @@ $TTL	604800
                         86400 ; Retry
                         2419200 ; Expire
                         604800 ) ; Negative Cache TTL
-;
-#Servidores de nombre
+;Servidores de nombre
 @	IN	NS	PC11.ejemplo.com.
 	IN	NS	PC12.ejemplo.com.
 
