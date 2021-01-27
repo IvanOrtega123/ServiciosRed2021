@@ -1,4 +1,3 @@
-
 $TTL	604800
 @	IN	SOA	PC11 admin (
                         5 ; Serial
